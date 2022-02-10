@@ -37,7 +37,10 @@ module.exports = {
 
         const payment = await Payment.find()
 
-        res.status(200).json({ data: voucher, payment })
+        res.status(200).json({ data: {
+            detail: voucher,
+            payment
+        } })
 
         } catch (err) {
 
