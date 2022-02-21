@@ -60,7 +60,7 @@ module.exports = {
 
   checkout: async (req, res) => {
     try {
-      const { acountUser, name, nominal, voucher, payment, bank } = req.body;
+      const { accountUser, name, nominal, voucher, payment, bank } = req.body;
 
       const res_voucher = await Voucher.findOne({ _id: voucher })
         .select("name category _id thumbnail user")
@@ -109,7 +109,7 @@ module.exports = {
         },
 
         name: name,
-        acountUser: acountUser,
+        accountUser: accountUser,
         tax: tax,
         value: value,
         player: req.player._id,
